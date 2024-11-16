@@ -1,19 +1,11 @@
 <div id="top"></div>
-
-<!-- PROJECT SHIELDS -->
 <div align="center">
-  <a href="https://github.com/saharsh-agrawal/Minesweeper">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/saharsh-agrawal/Minesweeper?style=for-the-badge">
-  </a>
-  <a href="https://github.com/saharsh-agrawal/Minesweeper/issues">
-    <img alt="GitHub issues" src="https://img.shields.io/github/issues/saharsh-agrawal/Minesweeper?style=for-the-badge">
-  </a>
-  <a href="https://github.com/saharsh-agrawal/Minesweeper/network/members">
-    <img alt="GitHub forks" src="https://img.shields.io/github/forks/saharsh-agrawal/Minesweeper?style=for-the-badge">
-  </a>
-  <a href="https://github.com/saharsh-agrawal/Minesweeper/stargazers">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/saharsh-agrawal/Minesweeper?style=for-the-badge">
-  </a>
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
 </div>
 
 <!-- PROJECT LOGO -->
@@ -132,3 +124,12 @@ See the [open issues](https://github.com/saharsh-agrawal/Minesweeper/issues) for
 Maintainer - [Saharsh Agrawal](https://github.com/saharsh-agrawal)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+[contributors-shield]: https://img.shields.io/github/contributors/saharsh-agrawal/Minesweeper.svg?style=for-the-badge
+[contributors-url]: https://github.com/saharsh-agrawal/Minesweeper/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/saharsh-agrawal/Minesweeper.svg?style=for-the-badge
+[forks-url]: https://github.com/saharsh-agrawal/Minesweeper/network/members
+[stars-shield]: https://img.shields.io/github/stars/saharsh-agrawal/Minesweeper.svg?style=for-the-badge
+[stars-url]: https://github.com/saharsh-agrawal/Minesweeper/stargazers
+[issues-shield]: https://img.shields.io/github/issues/saharsh-agrawal/Minesweeper.svg?style=for-the-badge
+[issues-url]: https://github.com/saharsh-agrawal/Minesweeper/issues
