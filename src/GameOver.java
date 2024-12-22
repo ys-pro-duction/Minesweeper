@@ -76,7 +76,7 @@ public class GameOver extends JFrame {
 		lblBestTime.setBounds(33, 112, 140, 37);
 		contentPane.add(lblBestTime);
 		
-		JLabel lblBestTimeAnswer = new JLabel(highScore(gui.difficulty,gui.sec,gui.gameState)+" seconds");
+		JLabel lblBestTimeAnswer = new JLabel(highScore(gui.difficulty,gui.sec,gui.gameState));
 		lblBestTimeAnswer.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBestTimeAnswer.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblBestTimeAnswer.setBounds(253, 112, 140, 37);
@@ -94,57 +94,22 @@ public class GameOver extends JFrame {
 		
 	}
 	
-	private String highScore(char diff,int score,char gameState)
-	{
-		try
-		{
-			BufferedReader br=new BufferedReader(new InputStreamReader(ResourceLoader.read("highScore.txt")));
-			
-			int scores[]=new int[3];
-			scores[0]=Integer.parseInt(br.readLine());
-			scores[1]=Integer.parseInt(br.readLine());
-			scores[2]=Integer.parseInt(br.readLine());
-			
-			br.close();
-			
-			if(gameState=='w')
-			{
-				switch(diff)
-				{
-					case 'e':
-						if(score<scores[0] || scores[0]==0) scores[0]=score;
-						break;
-					case 'm':
-						if(score<scores[1] || scores[1]==0) scores[1]=score;
-						break;
-					case 'h':
-						if(score<scores[2] || scores[2]==0) scores[2]=score;
-						break;
-				}
-			
-				FileWriter fw=new FileWriter("highScore.txt",false);
-				BufferedWriter bw=new BufferedWriter(fw);
-				PrintWriter pw=new PrintWriter(bw);
-				
-				pw.println(scores[0]);
-				pw.println(scores[1]);
-				pw.println(scores[2]);
-				
-				pw.close();bw.close();fw.close();
-			
-			}
-			
-			if(diff=='e' && scores[0]!=0) return scores[0]+"";
-			if(diff=='m' && scores[1]!=0) return scores[1]+"";
-			if(diff=='h' && scores[2]!=0) return scores[2]+"";
-			
-		}
-		catch (IOException e)
-		{
-			System.out.println("File Not Found");
-		}
-		return "(N.A.)";
-	}
+	private String highScore(char diff, int score, char gameState) {
+        try {
+            if (gameState == 'w') {
+                String level = diff == 'e' ? "Easy" : diff == 'm' ? "Medium" : "Hard";
+                HighScoreManager.updateHighScore(level, score);
+            }
+            String level = diff == 'e' ? "Easy" : diff == 'm' ? "Medium" : "Hard";
+            int bestTime = HighScoreManager.getHighScore(level);
+            return bestTime == 0 ? "(N.A.)" : bestTime + " seconds";
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "(N.A.)";
+    }
+	
 	
 	private void restart(GUI gui)
 	{
