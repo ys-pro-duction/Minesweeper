@@ -44,7 +44,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Minesweeper (with Autoplay) is a Java-based implementation of the classic Minesweeper game, planned to be enhanced with an AI-powered Autoplay feature that helps to automatically open or mark the obvious boxes based on basic AI logic. The game presents users with three difficulty levels and maintains high scores for each level in a local `highScore.txt` file.
+Minesweeper (with Autoplay) is a Java-based implementation of the classic Minesweeper game, planned to be enhanced with an AI-powered Autoplay feature that helps to automatically open or mark the obvious boxes based on basic AI logic. The game presents users with three difficulty levels and maintains high scores for each level in a local highScores.json file. The JSON file is managed using the json-20240303.jar library.
 
 ### Features
 - Classic Minesweeper gameplay
@@ -62,6 +62,11 @@ To set up Minesweeper (with Autoplay) locally, follow these steps:
 ### Prerequisites
 - Ensure you have at least JDK 22 installed. You can download it from [here](https://www.oracle.com/java/technologies/javase/jdk22-archive-downloads.html).
 - Any Java IDE - (Install IntelliJ IDEA from [here](https://www.jetbrains.com/idea/)).
+-json-20240303.jar library is required for JSON management. Ensure it is added to the libs directory of the project.
+-The settings.json file must be updated to include the following line to reference the library:
+"java.project.referencedLibraries": [
+    "libs/json-20240303.jar"
+]
 
 ### Steps
 1. Clone the repository:
@@ -75,12 +80,14 @@ To set up Minesweeper (with Autoplay) locally, follow these steps:
     - Locate `Minesweeper.java`.
     - Right-click on `Minesweeper.java` and select `Run 'Minesweeper.main()'`.
 
+4. Add the json-20240303.jar file to the libs directory.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE -->
 ## Usage
 
-Upon running the application, a main window will appear, asking the user to choose a level of difficulty (Easy, Medium, Hard). The game board is then presented according to the chosen difficulty. High scores are saved locally in `highScore.txt`.
+Upon running the application, a main window will appear, asking the user to choose a level of difficulty (Easy, Medium, Hard). The game board is then presented according to the chosen difficulty. High scores are saved locally in highScores.json, located in the user's home directory.
 
 ### Autoplay Feature
 - The Autoplay feature is currently under development.
@@ -110,7 +117,7 @@ Contributions are what make the open source community such an amazing place to l
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Fix high score storage issue for packed JAR files.
+- [x] Fix high score storage issue for packed JAR files by replacing `highScore.txt` with a JSON-based system.
 - [ ] Implement Autoplay feature with basic AI logic.
 - [ ] Add more advanced AI features for improved gameplay.
 
