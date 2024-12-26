@@ -16,6 +16,10 @@ public class Minesweeper implements Runnable{
     public void run() {
         while(true){
             gui.repaint();
+            try {
+                Thread.sleep(16); // ~60 fps
+            } catch (InterruptedException e) {
+            }
         }
     }
     
