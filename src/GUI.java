@@ -323,6 +323,7 @@ public class GUI extends JFrame{
                 }else {
                     lastMinX = -1;
                     lastMinY = -1;
+                    repaint();
                 }
             }
         }
