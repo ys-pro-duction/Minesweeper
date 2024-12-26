@@ -15,19 +15,14 @@ public class Minesweeper implements Runnable{
     @Override
     public void run() {
         // repaint time every second
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    while (true){
-                        gui.repaint(gui.timeX,gui.timeY,100,100);
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }).start();
+        while (true){
+            gui.repaint(gui.timeX,gui.timeY,100,100);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }
