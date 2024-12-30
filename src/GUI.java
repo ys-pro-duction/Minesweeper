@@ -315,7 +315,7 @@ public class GUI extends JFrame{
                 int currentMinY = my - ((my-gap-titleBar) %l)+spacing;
                 int currentMaxY = my - ((my-gap-titleBar) % l)+l-spacing;
                 if (mx >= currentMinX && my >= currentMinY  && mx < currentMaxX && my < currentMaxY){
-                    if (lastMinX != currentMinX && lastMinY != currentMinY) {
+                    if (lastMinX != currentMinX || lastMinY != currentMinY) {
                         lastMinX = currentMinX;
                         lastMinY = currentMinY;
                         repaint();
